@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres
+    restart: no
+    ports:
+      - 5432:5432
+    # set shared memory limit
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: youflow
+      POSTGRES_USER: youflow
+      POSTGRES_PASSWORD: youflow
+
+  adminer:
+    image: adminer
+    restart: no
+    ports:
+      - 8080:8080

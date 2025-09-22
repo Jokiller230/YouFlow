@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
   <a href=".github/assets/ghost_cute.png" alt="Cute ghost holding a heart in a pixel art style." width="200"></a>
@@ -27,7 +26,7 @@ So in essence, each project has its own board, which features tickets, which the
 Notes are like messages in a text editor, but each note may reference a user Todo or Shout.
 
 ## 🚀 How To Use
-This project is built on top of [Bun](https://bun.com) and [SvelteKit](https://svelte.dev/docs/kit/introduction).
+This project is built on top of [Bun](https://bun.com), [Hono](https://hono.dev) and [SvelteKit](https://svelte.dev/docs/kit/introduction).
 
 #### 1. Installing depedencies
 ```bash
@@ -43,5 +42,4 @@ bun dev
 - MantisBT
 
 ## 🔐 License
-This project follows the principles of the FFL (Feel-Free-License).
-See the attached LICENSE file for details.
+This project is available under the terms of the MIT license!

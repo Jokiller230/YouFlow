@@ -25,19 +25,6 @@ So in essence, each project has its own board, which features tickets, which the
 
 Notes are like messages in a text editor, but each note may reference a user Todo or Shout.
 
-## 🚀 How To Use
-This project is built on top of [Bun](https://bun.com), [Hono](https://hono.dev) and [SvelteKit](https://svelte.dev/docs/kit/introduction).
-
-#### 1. Installing depedencies
-```bash
-bun install
-```
-
-#### 2. Launching the app
-```bash
-bun dev
-```
-
 ## 🎨 Credits
 - MantisBT
 

@@ -1,0 +1,5 @@
+{
+	"name": "auditor",
+	"version": "0.1.0",
+	"description": "Audit logging plugin for YouFlow."
+}

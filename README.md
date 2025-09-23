@@ -1,45 +1,56 @@
 <h1 align="center">
   <br>
-  <a href=".github/assets/ghost_cute.png" alt="Cute ghost holding a heart in a pixel art style." width="200"></a>
-  <br>
-  YouFlow!
+  YouFlow! Backend
   <br>
 </h1>
 
-<h4 align="center">A fun and intuitive project management tool built on top of <a href="https://svelte.dev/docs/kit/introduction" target="_blank">SvelteKit</a>.</h4>
+<h4 align="center">A fun and intuitive project management tool built on top of <a href="https://hono.dev" target="_blank">Hono</a> and <a href="https://bun.sh" target="_blank">Bun</a>.</h4>
 
 <p align="center">
-  <a href="#-key-features">Key Features</a> •
-  <a href="#-how-to-use">How To Use</a> •
-  <a href="#-credits">Credits</a> •
-  <a href="#-license">License</a>
+  <a href="#-requirements">Requirements</a> •
+  <a href="#-getting-started">Getting started</a> •
+  <a href="#-development-practices">Development practices</a>
 </p>
 
-## ✨ Key Features
-- Project management with a unique structure, similar to MantisBT
-	1. project board
-	2. tickets
-	3. notes
+## 📌 Requirements
+- Docker
+- Bun v1.2+
 
-So in essence, each project has its own board, which features tickets, which then again features their own notes.
+## 🚀 Getting started
+Running the backend requires some database preparations.
 
-Notes are like messages in a text editor, but each note may reference a user Todo or Shout.
+### 🌱 Database setup
+Our docker compose configuration conviniently provides a postgres database with adminer.
 
-## 🚀 How To Use
-This project is built on top of [Bun](https://bun.com), [Hono](https://hono.dev) and [SvelteKit](https://svelte.dev/docs/kit/introduction).
-
-#### 1. Installing depedencies
-```bash
-bun install
+To launch it, simply execute:
+```sh
+docker compose up -d
 ```
 
-#### 2. Launching the app
-```bash
-bun dev
+Once the database is up, we can run our migrations:
+```sh
+bun run db:migrations:apply
 ```
 
-## 🎨 Credits
-- MantisBT
+### 🔨 Running in development
+To start a development instance of YouFlow, simply execute the following:
+```sh
+bun run dev
+```
 
-## 🔐 License
-This project is available under the terms of the MIT license!
+## 🧑‍💻 Development practices
+Learn how to use our stack and tools below.
+
+### 🔥 Validation
+Hono has first-class support for validation using its zod-validator package, in combination with zod.
+
+This also plays in nicely with the `hc` client, which may be used in frontend implementations, for seamless interactions with the API.
+
+Examples are available in the official docs: https://hono.dev/docs/concepts/stacks#validation-with-zod
+
+### 🛂 Authentication
+We handle authentication through the better-auth package.
+
+Learn how to use it in the official docs:
+- https://www.better-auth.com/docs/installation
+- https://www.better-auth.com/docs/basic-usage

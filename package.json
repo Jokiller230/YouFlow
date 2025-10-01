@@ -11,19 +11,19 @@
 		"db:migrations:apply": "drizzle-kit migrate"
 	},
 	"devDependencies": {
-		"@types/bun": "^1.2.22",
-		"@types/node": "^24.5.2",
+		"@types/bun": "^1.2.23",
+		"@types/node": "^24.6.1",
 		"@types/pg": "^8.15.5",
-		"drizzle-kit": "^0.31.4",
-		"typescript": "^5.9.2"
+		"drizzle-kit": "^0.31.5",
+		"typescript": "^5.9.3"
 	},
 	"dependencies": {
 		"@hono/arktype-validator": "^2.0.1",
 		"arktype": "^2.1.22",
-		"better-auth": "^1.3.16",
+		"better-auth": "^1.3.24",
 		"drizzle-arktype": "^0.1.3",
 		"drizzle-orm": "^0.44.5",
-		"hono": "^4.9.8",
+		"hono": "^4.9.9",
 		"pg": "^8.16.3"
 	}
 }

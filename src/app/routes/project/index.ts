@@ -3,17 +3,23 @@
 //==============================================
 import { Hono } from "hono";
 import { arktypeValidator } from "@hono/arktype-validator";
-import { project, projectInsertSchema, projectSelectSchema } from "@/app/models/project";
+import { project, projectInsertSchema } from "@/app/models/project";
 import { db } from "@/lib/db";
+import { type } from "arktype";
+import { eq } from "drizzle-orm";
 
 //==============================================
 // Route definitions
 //==============================================
 export default new Hono()
-	.get("/", arktypeValidator("json", projectSelectSchema), (c) => {
-		// @Todo: figure out why this doesn't work when supplying JSON body
-		const data = c.req.valid("json");
-		return c.json(data);
+	.get("/:id", arktypeValidator("param", type({ id: "string" })), async (c) => {
+		const data = c.req.valid("param");
+
+		const result = await db.select().from(project).where(eq(project.id, parseInt(data.id)));
+
+		if (!result[0]) return c.json({ success: false, message: "INFO::NO_RESULT" });
+
+		return c.json({ success: true, data: result[0] });
 	})
 	.get("/list", async (c) => {
 		const result = await db.select().from(project);
